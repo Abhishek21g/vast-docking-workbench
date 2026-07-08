@@ -1,0 +1,13 @@
+id: haven-1
+modules: 1
+nasa_certified: false
+consumable_crew_days: 160
+online_date: 2027-01-01
+ports:
+  - id: forward-lda
+    standard: lda
+    lda_generation: gen-1
+    opening_diameter_m: 2.90
+    role: androgynous
+    compatible_standards: [lda]
+    hard_capture_bolt_count: 12

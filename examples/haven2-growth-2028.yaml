@@ -1,0 +1,50 @@
+scenario: haven2-growth-2028
+description: >
+  Synthetic 2028–2032 Haven-2 growth with international crew visits and a
+  CBM-class cargo attempt. Demonstrates port double-booking and standard mismatch.
+
+limits: profiles/limits/idss-approach-bounds.yaml
+
+assumptions:
+  - Haven-2 module specs from vastspace.com/haven-2 (public)
+  - LDA opening 2.90 m from vastspace.com/large-docking-adapter
+  - Vehicle profiles are synthetic demo shapes, not OEM proprietary data
+
+station_states:
+  haven2-1module: profiles/stations/haven2-1module.yaml
+  haven2-2module: profiles/stations/haven2-2module.yaml
+  haven2-3module: profiles/stations/haven2-3module.yaml
+
+vehicles:
+  crew-dragon-lda-gen1: profiles/vehicles/crew-dragon-lda-gen1.yaml
+  cargo-cbm-pallet: profiles/vehicles/cargo-cbm-pallet.yaml
+
+timeline:
+  - date: 2028-06-01
+    station_state: haven2-1module
+    modules: 1
+  - date: 2029-01-15
+    station_state: haven2-2module
+    modules: 2
+  - date: 2029-06-01
+    station_state: haven2-3module
+    modules: 3
+
+visits:
+  - id: uk-crew-2029-a
+    date: 2029-06-10
+    vehicle: crew-dragon-lda-gen1
+    port: forward-lda
+    duration_days: 14
+    requires_nasa_cert: true
+  - id: fra-crew-2029-b
+    date: 2029-06-12
+    vehicle: crew-dragon-lda-gen1
+    port: aft-lda
+    duration_days: 14
+    requires_nasa_cert: true
+  - id: cargo-cbm-2029
+    date: 2029-06-15
+    vehicle: cargo-cbm-pallet
+    port: forward-lda
+    duration_days: 7

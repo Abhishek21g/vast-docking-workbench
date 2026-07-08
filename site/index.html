@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Station Docking Compatibility Workbench — Vast LDA</title>
+    <meta
+      name="description"
+      content="Plan, simulate, and receipt-check station docking compatibility using published Vast LDA specs."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <p class="eyebrow">Vast Space · PRODUCT DEMO · NOT AFFILIATED</p>
+      <h1>Station Docking Compatibility Workbench</h1>
+      <p class="lede">
+        Pre-certify vehicle–module–port pairings and Haven-2 growth timelines using
+        <strong>published LDA geometry</strong> (2.90 m opening, gen-1) — no proprietary Haven CAD.
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="https://github.com/Abhishek21g/vast-docking-workbench" target="_blank" rel="noopener">GitHub</a>
+        <button class="btn" id="run-demo">Run bundled demo</button>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section class="panel">
+        <h2>CLI</h2>
+        <pre class="code"><code>vast-dock plan examples/haven2-growth-2028.yaml
+vast-dock run  examples/haven2-growth-2028.yaml --seed 42
+vast-dock doctor examples/haven2-growth-2028.yaml
+vast-dock report --json out/receipts/latest/summary.json</code></pre>
+      </section>
+
+      <section class="panel verdict-panel">
+        <h2>Overall verdict</h2>
+        <div id="overall-verdict" class="verdict no-go">no-go</div>
+        <p id="run-meta" class="meta"></p>
+      </section>
+
+      <section class="panel full">
+        <h2>Visit results</h2>
+        <div id="visits" class="visits"></div>
+      </section>
+
+      <section class="panel full">
+        <h2>Assumptions</h2>
+        <ul id="assumptions" class="assumptions"></ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Sources:
+        <a href="https://www.vastspace.com/large-docking-adapter">LDA</a> ·
+        <a href="https://www.vastspace.com/haven-2">Haven-2</a> ·
+        Built by <a href="https://enaguthi.com">Abhishek Enaguthi</a>
+      </p>
+    </footer>
+    <script src="./app.js"></script>
+  </body>
+</html>

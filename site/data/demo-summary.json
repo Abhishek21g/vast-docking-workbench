@@ -1,0 +1,115 @@
+{
+  "run_id": "20260708T070552Z",
+  "scenario_id": "haven2-growth-2028",
+  "seed": 42,
+  "overall_verdict": "no-go",
+  "visit_results": [
+    {
+      "visit_id": "uk-crew-2029-a",
+      "visit_date": "2029-06-10",
+      "station_state": "haven2-3module",
+      "port": "forward-lda",
+      "vehicle": "crew-dragon-lda-gen1",
+      "checks": {
+        "interface_match": true,
+        "opening_clearance": true,
+        "approach_rates": true,
+        "capture_envelope": true,
+        "umbilical_checklist": true,
+        "port_available": false,
+        "module_count_ok": true,
+        "timeline_ok": true,
+        "nasa_cert_ok": true,
+        "consumable_ok": true
+      },
+      "findings": [
+        {
+          "rule_id": "PORT_DOUBLE_BOOKING",
+          "severity": "no-go",
+          "message": "Port already booked by overlapping visit"
+        }
+      ],
+      "verdict": "no-go",
+      "blocking_reasons": [
+        "PORT_DOUBLE_BOOKING"
+      ]
+    },
+    {
+      "visit_id": "fra-crew-2029-b",
+      "visit_date": "2029-06-12",
+      "station_state": "haven2-3module",
+      "port": "aft-lda",
+      "vehicle": "crew-dragon-lda-gen1",
+      "checks": {
+        "interface_match": true,
+        "opening_clearance": true,
+        "approach_rates": true,
+        "capture_envelope": true,
+        "umbilical_checklist": true,
+        "port_available": true,
+        "module_count_ok": true,
+        "timeline_ok": true,
+        "nasa_cert_ok": true,
+        "consumable_ok": true
+      },
+      "findings": [],
+      "verdict": "dock-go",
+      "blocking_reasons": []
+    },
+    {
+      "visit_id": "cargo-cbm-2029",
+      "visit_date": "2029-06-15",
+      "station_state": "haven2-3module",
+      "port": "forward-lda",
+      "vehicle": "cargo-cbm-pallet",
+      "checks": {
+        "interface_match": false,
+        "opening_clearance": true,
+        "approach_rates": true,
+        "capture_envelope": false,
+        "umbilical_checklist": false,
+        "port_available": false,
+        "module_count_ok": true,
+        "timeline_ok": true,
+        "nasa_cert_ok": true,
+        "consumable_ok": true
+      },
+      "findings": [
+        {
+          "rule_id": "PORT_STANDARD_MISMATCH",
+          "severity": "no-go",
+          "message": "Vehicle standard 'cbm' not in port compatible set ['lda']"
+        },
+        {
+          "rule_id": "CG_ENVELOPE_EXCEED",
+          "severity": "no-go",
+          "message": "CG offset 0.6 m exceeds capture envelope 0.5 m"
+        },
+        {
+          "rule_id": "UMBILICAL_MISSING",
+          "severity": "human-review",
+          "message": "Missing umbilical connectors; required ['power', 'data', 'comms'], vehicle has ['power', 'data']"
+        },
+        {
+          "rule_id": "PORT_DOUBLE_BOOKING",
+          "severity": "no-go",
+          "message": "Port already booked by overlapping visit"
+        }
+      ],
+      "verdict": "no-go",
+      "blocking_reasons": [
+        "PORT_STANDARD_MISMATCH",
+        "CG_ENVELOPE_EXCEED",
+        "PORT_DOUBLE_BOOKING"
+      ]
+    }
+  ],
+  "assumptions": [
+    "Haven-2 module specs from vastspace.com/haven-2 (public)",
+    "LDA opening 2.90 m from vastspace.com/large-docking-adapter",
+    "Vehicle profiles are synthetic demo shapes, not OEM proprietary data",
+    "IDSS approach/capture bounds are synthetic placeholders until LDA user guide tables are ingested.",
+    "Vehicle profiles are synthetic demo shapes, not proprietary OEM data.",
+    "Uses published Vast LDA geometry from vastspace.com only."
+  ]
+}

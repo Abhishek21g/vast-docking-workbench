@@ -1,0 +1,14 @@
+synthetic: true
+note: IDSS-class placeholder bounds until LDA user guide tables are ingested
+
+approach:
+  max_axial_rate_m_s: 0.05
+  max_lateral_rate_m_s: 0.02
+  max_roll_rate_deg_s: 0.3
+
+capture:
+  max_cg_offset_m: 0.5
+  max_vehicle_mass_kg: 40000
+
+power_umbilical:
+  required_connectors: [power, data, comms]

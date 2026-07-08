@@ -1,0 +1,13 @@
+id: cargo-cbm-pallet
+synthetic: true
+port_standard: cbm
+lda_generation: null
+mass_kg: 8000
+cg_offset_m: 0.6
+min_opening_m: 1.6
+approach:
+  axial_m_s: 0.02
+  lateral_m_s: 0.008
+  roll_deg_s: 0.05
+umbilical_connectors: [power, data]
+hard_capture_bolt_count: 12

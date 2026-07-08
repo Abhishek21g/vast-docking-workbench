@@ -1,0 +1,18 @@
+id: crew-dragon-lda-gen1
+synthetic: true
+port_standard: lda
+lda_generation: gen-1
+mass_kg: 12000
+cg_offset_m: 0.4
+min_opening_m: 2.0
+approach:
+  axial_m_s: 0.03
+  lateral_m_s: 0.01
+  roll_deg_s: 0.1
+umbilical_connectors: [power, data, comms]
+soft_capture:
+  retroreflectors: true
+  latches: true
+  petals: true
+  passive_actuators: true
+hard_capture_bolt_count: 12

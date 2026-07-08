@@ -1,0 +1,15 @@
+# Published LDA geometry — vastspace.com/large-docking-adapter
+outer_diameter_m: 3.65
+pressurized_opening_diameter_m: 2.90
+pressurized_opening_area_m2: 6.6
+generation: gen-1
+rigidity_factor_vs_ida: 30
+
+soft_capture:
+  retroreflectors: 3
+  latches: 3
+  petals: 3
+  passive_actuators: 6
+
+hard_capture:
+  powered_bolts: 12

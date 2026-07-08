@@ -1,0 +1,22 @@
+scenario: haven1-single-port
+description: Haven-1 scale single-port crew visit using published specs.
+
+limits: profiles/limits/idss-approach-bounds.yaml
+
+station_states:
+  haven-1: profiles/stations/haven-1.yaml
+
+vehicles:
+  crew-dragon-lda-gen1: profiles/vehicles/crew-dragon-lda-gen1.yaml
+
+timeline:
+  - date: 2027-06-01
+    station_state: haven-1
+    modules: 1
+
+visits:
+  - id: haven1-crew-demo
+    date: 2027-08-01
+    vehicle: crew-dragon-lda-gen1
+    port: forward-lda
+    duration_days: 7
